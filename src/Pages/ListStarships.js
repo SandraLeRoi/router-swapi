@@ -9,11 +9,15 @@ function ListStarships() {
     const [listStarships, setListStarships] = useState([])
 
     function getListStarships() {
-        axios.get("https://swapi.dev/api/starships")
-            .then(response => {
-                console.log(response.data);
-                setListStarships(response.data.results);
-            })
+        for (var i = 1; i<5; i++) {
+            axios.get("https://swapi.dev/api/starships/?page=" + i)
+                .then(response => {
+                    response.data.results.forEach(function (newResult) {
+                        listStarships.push(newResult)
+                    })
+                    setListStarships([...listStarships]);
+                })
+        }
     }
 
     function displayListStarships() {

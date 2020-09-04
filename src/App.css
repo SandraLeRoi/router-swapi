@@ -1,7 +1,9 @@
 .App {
   text-align: center;
-  text-color: aliceblue;
-  background-color: antiquewhite;
+}
+
+.list {
+  text-align: left;
 }
 
 .App-logo {
