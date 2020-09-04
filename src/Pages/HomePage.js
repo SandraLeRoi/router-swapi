@@ -14,9 +14,8 @@ function HomePage(){
             axios.get("https://swapi.dev/api/people/?page="+i)
                 .then(response => {
                     response.data.results.forEach(function(newResult) {
-                        result.push(newResult)
-                    })
-
+                            result.push(newResult)
+                        })
                     setResult([...result]);
                     })
         }

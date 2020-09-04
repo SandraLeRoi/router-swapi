@@ -3,12 +3,10 @@ import {useParams} from "react-router-dom";
 import * as axios from "axios";
 
 function CharacterPages(){
-
-
     const result = useParams()
-    console.log(result)
 
     useEffect(getCharacter,[])
+
     const [character, setCharacter] = useState({})
 
     function getCharacter(){
