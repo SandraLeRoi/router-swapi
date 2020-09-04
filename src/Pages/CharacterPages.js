@@ -5,22 +5,22 @@ import * as axios from "axios";
 function CharacterPages(){
 
 
-    const perso = useParams()
-    console.log(perso)
+    const result = useParams()
+    console.log(result)
 
     useEffect(getCharacter,[])
-    const [personnage, setPersonnage] = useState({})
+    const [character, setCharacter] = useState({})
 
     function getCharacter(){
-        axios.get("https://swapi.dev/api/people/"+perso.id)
+        axios.get("https://swapi.dev/api/people/"+result.id)
            .then(response =>
-                 setPersonnage(response.data)
+                 setCharacter(response.data)
           )
     }
 
     function displayCharacter() {
-        console.log(personnage)
-        return (<body><h1>{personnage.name}</h1><p>Année de naissance : {personnage.birth_year}</p><p> Poids : {personnage.height}</p></body>)
+        console.log(character)
+        return (<body><h1>{character.name}</h1><p>Année de naissance : {character.birth_year}</p><p> Poids : {character.height}</p></body>)
     }
 
     return displayCharacter()
